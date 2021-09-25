@@ -5,7 +5,6 @@ import Sidebar from './Sidebar'
 const DashBoardStyles={
     display:"flex",
     flexDirection:"row",
-    
 }
 const Dashboard = () => {
     return (

@@ -4,11 +4,12 @@ import styled from 'styled-components'
 const Panel = styled.div `
     background-color: grey;
     padding: 5%;
-    max-height: 100vh;
+     height:100vh;
     text-align: left;
-    position: sticky;
+    position: fixed;
     overflow-y: hidden;
-    
+   
+
 `
 const Li = styled.li`
    padding: 10%;
