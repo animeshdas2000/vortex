@@ -1,14 +1,19 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Crypto from "../Components/Crypto";
+import { PButton, Select, Option } from "../Components/styledComp/Buttons";
 import { Table, TROW, THEAD } from "../Components/styledComp/table";
 function Tracker() {
   const [coins, setCoins] = useState([]);
+  const [curr, setCurr] = useState("usd"); //Currency State
+  const handleCurrChange = (e) => {
+    setCurr({ value: e.target.value });
+  };
   useEffect(() => {
     axios
       .get("https://api.coingecko.com/api/v3/coins/markets", {
         params: {
-          vs_currency: "usd",
+          vs_currency: curr,
           order: "market_cap_desc",
           per_page: 100,
           page: 1,
@@ -24,11 +29,15 @@ function Tracker() {
   });
   const THeadData = [
     {
-      title: "Name",
-      flex: "1",
+      title: "Icon",
+      flex: "0.5",
     },
     {
       title: "Symbol",
+      flex: "1",
+    },
+    {
+      title: "Name",
       flex: "3",
     },
     {
@@ -36,8 +45,19 @@ function Tracker() {
       flex: "1.5",
     },
   ];
+
   return (
     <>
+      <div>
+        <p>Filters</p>
+
+        <Select value={curr} onChange={handleCurrChange}>
+          <Option value="usd">USD</Option>
+          <Option value="inr">INR</Option>
+          <Option value="gbp">GBP</Option>
+        </Select>
+        <PButton>Update</PButton>
+      </div>
       <Table>
         <TROW>
           {THeadData.map((thd) => {
