@@ -1,4 +1,6 @@
 # Vortex - Crypto and Stock Market Tracker
+[Live Demo](https://animeshdas2000.github.io/vortex/) 
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
