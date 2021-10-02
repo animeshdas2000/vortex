@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const PButton = styled.button`
   background-color: black;
   border: none;
+  color: white;
 `;
 
 export const Select = styled.select`

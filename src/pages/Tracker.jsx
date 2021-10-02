@@ -1,32 +1,41 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Crypto from "../Components/Crypto";
-import { PButton, Select, Option } from "../Components/styledComp/Buttons";
+
 import { Table, TROW, THEAD } from "../Components/styledComp/table";
+// import data from "../services/currencycode.json";
+
+// const supportedCurrency = ["USD", "GBP", "INR"];
 function Tracker() {
+  // const [curr, setCurr] = useState("GBP"); //Currency State
   const [coins, setCoins] = useState([]);
-  const [curr, setCurr] = useState("usd"); //Currency State
-  const handleCurrChange = (e) => {
-    setCurr({ value: e.target.value });
-  };
+  const [isLoading, setIsLoading] = useState(true);
+  // const handleCurrChange = (e) => {
+  //   setCurr(e.currentTarget.value);
+  //   console.log(curr);
+  // };
+  // https://ipapi.co/currency/ ip-> currency
   useEffect(() => {
     axios
       .get("https://api.coingecko.com/api/v3/coins/markets", {
         params: {
-          vs_currency: curr,
+          vs_currency: "USD",
           order: "market_cap_desc",
           per_page: 100,
           page: 1,
+
           sparkline: false,
         },
       })
       .then((res) => {
         setCoins(res.data);
+        setIsLoading(false);
       })
       .catch((err) => {
         console.log(err);
       });
-  });
+  }, []);
+
   const THeadData = [
     {
       title: "Icon",
@@ -46,38 +55,53 @@ function Tracker() {
     },
   ];
 
-  return (
-    <>
-      <div>
-        <p>Filters</p>
+  if (isLoading) {
+    return (
+      <h2 style={{ color: "white", textAlign: "center" }}>
+        Wait I'm Loading Cryptos for you
+      </h2> // update for SVG
+    );
+  } else {
+    return (
+      <>
+        <div>
+          <h1 style={{ color: "white", textAlign: "center" }}>
+            CryptoCurrency Tracker
+          </h1>
 
-        <Select value={curr} onChange={handleCurrChange}>
-          <Option value="usd">USD</Option>
-          <Option value="inr">INR</Option>
-          <Option value="gbp">GBP</Option>
-        </Select>
-        <PButton>Update</PButton>
-      </div>
-      <Table>
-        <TROW>
-          {THeadData.map((thd) => {
-            return <THEAD flex={thd.flex}>{thd.title}</THEAD>;
-          })}
-        </TROW>
+          {/* <Select>
+            {supportedCurrency.map((item) => {
+              return (
+                <>
+                  <Option value={item}>{item}</Option>
+                </>
+              );
+            })}
+          </Select>
+          <PButton color="white">Update</PButton> */}
 
-        {coins.map((coins) => {
-          return (
-            <Crypto
-              img={coins.image}
-              symbol={coins.symbol}
-              name={coins.name}
-              cprice={coins.current_price}
-            />
-          );
-        })}
-      </Table>
-    </>
-  );
+          <Table>
+            <TROW>
+              {THeadData.map((thd) => {
+                return <THEAD flex={thd.flex}>{thd.title}</THEAD>;
+              })}
+            </TROW>
+
+            {coins.map((coins) => {
+              return (
+                <Crypto
+                  img={coins.image}
+                  symbol={coins.symbol}
+                  name={coins.name}
+                  cprice={coins.current_price}
+                />
+              );
+            })}
+          </Table>
+        </div>
+      </>
+    );
+  }
 }
 
 export default Tracker;

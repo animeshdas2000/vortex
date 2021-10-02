@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, TBODY, TROW } from "./styledComp/table";
+import { TBODY, TROW } from "./styledComp/table";
 
 const Crypto = (props) => {
   return (
