@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Run on Local Device
 `npm install` \
-`npm 
+`npm start`
 
 The development server starts on [http://localhost:3000](http://localhost:3000)
 
