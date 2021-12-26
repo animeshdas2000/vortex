@@ -2,4 +2,21 @@
 :root {
   background-color: #0f1122;
   font-family: "Poppins", sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+footer{
+  background-color: #161b33;
+  text-align: center;
+  margin: 0;
+}
+.footer-text{
+  margin: 0;
+  padding: 10px;
+  color: #ffffff;
+}
+.footer-text a{
+color: #ffffff;
 }

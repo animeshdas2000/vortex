@@ -19,7 +19,7 @@ export const THEAD = styled.div`
   padding: 10px;
   width: 150px;
   border-radius: 10px;
-  margin: 0 5px;
+  margin:  5px;
   flex: ${(props) => props.flex || "auto"};
   /* border: 1px solid white; */
   color: ${(props) => props.color || "#f8f9fa"};

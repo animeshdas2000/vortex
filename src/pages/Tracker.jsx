@@ -21,9 +21,8 @@ function Tracker() {
         params: {
           vs_currency: "USD",
           order: "market_cap_desc",
-          per_page: 100,
+          per_page: 20,
           page: 1,
-
           sparkline: false,
         },
       })
@@ -66,8 +65,9 @@ function Tracker() {
       <>
         <div>
           <h1 style={{ color: "white", textAlign: "center" }}>
-            CryptoCurrency Tracker
+           Market Watch
           </h1>
+          
 
           {/* <Select>
             {supportedCurrency.map((item) => {
