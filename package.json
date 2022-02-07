@@ -2,7 +2,6 @@
   "name": "vortex",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://animeshdas2000.github.io/vortex",
   "dependencies": {
     "@heroicons/react": "^1.0.4",
     "@reduxjs/toolkit": "^1.6.1",

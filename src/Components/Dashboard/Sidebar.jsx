@@ -54,11 +54,11 @@ const Sidebar = () => {
   return (
     <Panel>
       <Ul>
-        {SidebarData.map((data) => {
+        {SidebarData.map((data,key) => {
           return (
-            <>
-              <Li>{data.icon}{data.title}</Li>
-            </>
+            
+              <Li key={key}>{data.icon}{data.title}</Li>
+           
           );
         })}
         {/* <Li>Logout</Li> */}

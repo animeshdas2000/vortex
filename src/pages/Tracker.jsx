@@ -82,14 +82,15 @@ function Tracker() {
 
           <Table>
             <TROW>
-              {THeadData.map((thd) => {
-                return <THEAD flex={thd.flex}>{thd.title}</THEAD>;
+              {THeadData.map((thd,key) => {
+                return <THEAD key={key} flex={thd.flex}>{thd.title}</THEAD>;
               })}
             </TROW>
 
-            {coins.map((coins) => {
+            {coins.map((coins,key) => {
               return (
                 <Crypto
+                key={key}
                   img={coins.image}
                   symbol={coins.symbol}
                   name={coins.name}
