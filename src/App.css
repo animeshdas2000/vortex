@@ -23,3 +23,26 @@ footer{
 .footer-text a{
 color: #ffffff;
 }
+
+.card{
+  background-color: #161b33;
+  border-radius: 30px;
+  padding: 20px;
+  display: flex;
+  align-items:center;
+  margin: 10vh auto;
+  width: fit-content;
+}
+
+
+.img{
+  flex: 1;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+}
+.right{
+  flex: 2;
+ margin: 0 20px;
+}
