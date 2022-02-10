@@ -32,7 +32,7 @@ function CoinPage() {
         `/coins/${id}?localization=false&tickers=false&community_data=false&developer_data=false&sparkline=false`
       )
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         let market_data = res.data.market_data;
         setCoin({
           name: res.data.name,

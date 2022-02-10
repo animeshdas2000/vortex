@@ -70,7 +70,10 @@ color: #ffffff;
   align-items: center;
   margin:5px 40px;
 }
-
+.header>h1>a{
+  color: #ffffff;
+  text-decoration: none;
+}
 .main-nav{
   display: flex;
   flex-direction: row;

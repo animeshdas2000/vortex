@@ -3,7 +3,7 @@ import {GoogleAuth,logout} from "../services/Auth"
 import {FcGoogle} from "react-icons/fc"
 import {FiLogOut} from "react-icons/fi"
 import { UserContext } from '../context/userContext'
-import { Link,useNavigate } from 'react-router-dom'
+import {useNavigate } from 'react-router-dom'
 
 
 function AuthBtn() {

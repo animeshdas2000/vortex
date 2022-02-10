@@ -8,7 +8,8 @@ function Nav() {
   return (
   <>
     <nav className='header'>
-    <h1>Vortex.</h1>
+      
+    <h1><Link to="/">Vortex.</Link></h1>
 
     <ul className="main-nav">
       
