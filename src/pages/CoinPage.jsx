@@ -1,11 +1,13 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Graph from "../Components/Graph";
 import { cryptoAPI } from "../services/axios";
-
+import {UserContext} from "../context/userContext"
+import unAuth from "../assets/401.png"
 function CoinPage() {
   let params = useParams();
   const id = params.symbl;
+  const {user} = useContext(UserContext)
   // const [coinImg,setCoinImg] = useState("")
   // const [coinPrice,setCoinPrice] = useState([])
   const [coin, setCoin] = useState({
@@ -15,6 +17,7 @@ function CoinPage() {
     coinPrice: "",
     mktCap: "",
   });
+ 
 
   useEffect(() => {
     //   async function getCoin(){
@@ -23,7 +26,7 @@ function CoinPage() {
     //     setCoin(data);
     //   }
     // getCoin();
-  
+
     cryptoAPI
       .get(
         `/coins/${id}?localization=false&tickers=false&community_data=false&developer_data=false&sparkline=false`
@@ -41,23 +44,38 @@ function CoinPage() {
       })
       .catch((err) => console.log(err));
   }, [id]);
-
-  return (
-    <>
-      <div className="card">
-        <div className="img">
-          <img src={coin.coinImg.large} width="70%" alt="" />
+  
+    return (
+      <>
+      {!user?(
+        <div style={{textAlign:"center"}}>
+          <h1>Please Login</h1>
+          <img src={unAuth}  width="40%" alt="" />
+          
         </div>
-
-        <div className="right">
-          <h1>{coin.name} ({coin.symbol})</h1>
-          <h3></h3>
-          <h3>${coin.coinPrice} </h3>
-          <h3>${coin.mktCap} </h3>
-        </div>
+      ):(<div>
+        
+          <div className="card">
+            <div className="img">
+              <img src={coin.coinImg.large} width="70%" alt="" />
+            </div>
+            <div className="right">
+              <h1>
+                {coin.name} ({coin.symbol})
+              </h1>
+              <h5>USD value: ${coin.coinPrice} </h5>
+              <h5>Mkt. Cap: ${coin.mktCap} </h5>
+            </div>
+        
+          </div>
+          {/* <code>*If the graph is not visible reload the page</code> */}
+          <Graph id={id} name={coin.name}/>
       </div>
-    </>
-  );
+      )}
+        
+      </>
+    );
+  
 }
 
 export default CoinPage;

@@ -1,12 +1,16 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import CoinPage from "./pages/CoinPage";
+import Nav from "./Components/Nav";
+import Tracker from "./pages/Tracker";
 function Router() {
   return (
     <BrowserRouter>
+       <Nav/>
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/:symbl" element={<CoinPage/>}/>
+        <Route path="/market" element={<Tracker/>}/>
       </Routes>
     </BrowserRouter>
   );

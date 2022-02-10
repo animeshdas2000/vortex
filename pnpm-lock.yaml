@@ -7,34 +7,38 @@ specifiers:
   '@testing-library/react': ^11.2.7
   '@testing-library/user-event': ^12.8.3
   axios: ^0.21.4
+  chart.js: ^3.7.0
   dotenv: ^10.0.0
   firebase: ^9.6.6
   gh-pages: ^3.2.3
   react: ^17.0.2
+  react-chartjs-2: ^4.0.1
   react-dom: ^17.0.2
   react-icons: ^4.3.1
-  react-redux: ^7.2.5
   react-router-dom: ^6.2.1
   react-scripts: 4.0.3
+  react-scroll: ^1.8.4
   react-table: ^7.7.0
   styled-components: ^5.3.1
   web-vitals: ^1.1.2
 
 dependencies:
   '@heroicons/react': 1.0.5_react@17.0.2
-  '@reduxjs/toolkit': 1.6.2_react-redux@7.2.6+react@17.0.2
+  '@reduxjs/toolkit': 1.6.2_react@17.0.2
   '@testing-library/jest-dom': 5.15.1
   '@testing-library/react': 11.2.7_react-dom@17.0.2+react@17.0.2
   '@testing-library/user-event': 12.8.3
   axios: 0.21.4
+  chart.js: 3.7.0
   dotenv: 10.0.0
   firebase: 9.6.6
   react: 17.0.2
+  react-chartjs-2: 4.0.1_chart.js@3.7.0+react@17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-icons: 4.3.1_react@17.0.2
-  react-redux: 7.2.6_react-dom@17.0.2+react@17.0.2
   react-router-dom: 6.2.1_react-dom@17.0.2+react@17.0.2
   react-scripts: 4.0.3_react@17.0.2
+  react-scroll: 1.8.4_react-dom@17.0.2+react@17.0.2
   react-table: 7.7.0_react@17.0.2
   styled-components: 5.3.3_react-dom@17.0.2+react@17.0.2
   web-vitals: 1.1.2
@@ -2467,7 +2471,7 @@ packages:
     resolution: {integrity: sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=}
     dev: false
 
-  /@reduxjs/toolkit/1.6.2_react-redux@7.2.6+react@17.0.2:
+  /@reduxjs/toolkit/1.6.2_react@17.0.2:
     resolution: {integrity: sha512-HbfI/hOVrAcMGAYsMWxw3UJyIoAS9JTdwddsjlr5w3S50tXhWb+EMyhIw+IAvCVCLETkzdjgH91RjDSYZekVBA==}
     peerDependencies:
       react: ^16.14.0 || ^17.0.0
@@ -2480,7 +2484,6 @@ packages:
     dependencies:
       immer: 9.0.7
       react: 17.0.2
-      react-redux: 7.2.6_react-dom@17.0.2+react@17.0.2
       redux: 4.1.2
       redux-thunk: 2.4.1_redux@4.1.2
       reselect: 4.1.5
@@ -2767,13 +2770,6 @@ packages:
       '@types/node': 16.11.11
     dev: false
 
-  /@types/hoist-non-react-statics/3.3.1:
-    resolution: {integrity: sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==}
-    dependencies:
-      '@types/react': 17.0.37
-      hoist-non-react-statics: 3.3.2
-    dev: false
-
   /@types/html-minifier-terser/5.1.2:
     resolution: {integrity: sha512-h4lTMgMJctJybDp8CQrxTUiiYmedihHWkjnF/8Pxseu2S6Nlfcy8kwboQ8yejh456rP2yWoEVm1sS/FVsfM48w==}
     dev: false
@@ -2833,39 +2829,14 @@ packages:
     resolution: {integrity: sha512-ekoj4qOQYp7CvjX8ZDBgN86w3MqQhLE1hczEJbEIjgFEumDy+na/4AJAbLXfgEWFNB2pKadM5rPFtuSGMWK7xA==}
     dev: false
 
-  /@types/prop-types/15.7.4:
-    resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==}
-    dev: false
-
   /@types/q/1.5.5:
     resolution: {integrity: sha512-L28j2FcJfSZOnL1WBjDYp2vUHCeIFlyYI/53EwD/rKUBQ7MtUUfbQWiyKJGpcnv4/WgrhWsFKrcPstcAt/J0tQ==}
-    dev: false
-
-  /@types/react-redux/7.1.20:
-    resolution: {integrity: sha512-q42es4c8iIeTgcnB+yJgRTTzftv3eYYvCZOh1Ckn2eX/3o5TdsQYKUWpLoLuGlcY/p+VAhV9IOEZJcWk/vfkXw==}
-    dependencies:
-      '@types/hoist-non-react-statics': 3.3.1
-      '@types/react': 17.0.37
-      hoist-non-react-statics: 3.3.2
-      redux: 4.1.2
-    dev: false
-
-  /@types/react/17.0.37:
-    resolution: {integrity: sha512-2FS1oTqBGcH/s0E+CjrCCR9+JMpsu9b69RTFO+40ua43ZqP5MmQ4iUde/dMjWR909KxZwmOQIFq6AV6NjEG5xg==}
-    dependencies:
-      '@types/prop-types': 15.7.4
-      '@types/scheduler': 0.16.2
-      csstype: 3.0.10
     dev: false
 
   /@types/resolve/0.0.8:
     resolution: {integrity: sha512-auApPaJf3NPfe18hSoJkp8EbZzer2ISk7o8mCC3M9he/a04+gbMF97NkpD2S8riMGvm4BMRI59/SZQSaLTKpsQ==}
     dependencies:
       '@types/node': 16.11.11
-    dev: false
-
-  /@types/scheduler/0.16.2:
-    resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
     dev: false
 
   /@types/source-list-map/0.1.2:
@@ -4259,6 +4230,10 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
+  /chart.js/3.7.0:
+    resolution: {integrity: sha512-31gVuqqKp3lDIFmzpKIrBeum4OpZsQjSIAqlOpgjosHDJZlULtvwLEZKtEhIAZc7JMPaHlYMys40Qy9Mf+1AAg==}
+    dev: false
+
   /check-types/11.1.2:
     resolution: {integrity: sha512-tzWzvgePgLORb9/3a0YenggReLKAIb2owL03H2Xdoe5pKcUyWRSEQ8xfCar8t2SIAuEDwtmx2da1YB52YuHQMQ==}
     dev: false
@@ -4949,10 +4924,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       cssom: 0.3.8
-    dev: false
-
-  /csstype/3.0.10:
-    resolution: {integrity: sha512-2u44ZG2OcNUO9HDp/Jl8C07x6pU/eTR3ncV91SiK3dhG9TWvRVsCoJw14Ckx5DgWkzGA3waZWO3d7pgqpUI/XA==}
     dev: false
 
   /cyclist/1.0.1:
@@ -8276,6 +8247,10 @@ packages:
       lodash._reinterpolate: 3.0.0
     dev: false
 
+  /lodash.throttle/4.1.1:
+    resolution: {integrity: sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=}
+    dev: false
+
   /lodash.truncate/4.4.2:
     resolution: {integrity: sha1-WjUNoLERO4N+z//VgSy+WNbq4ZM=}
     dev: false
@@ -10255,6 +10230,16 @@ packages:
       whatwg-fetch: 3.6.2
     dev: false
 
+  /react-chartjs-2/4.0.1_chart.js@3.7.0+react@17.0.2:
+    resolution: {integrity: sha512-q8bgWzKoFvBvD7YcjT/hXG8jt55TaMAuJ1dmI3tKFJ7CijUWYz4pIfOhkTI6PBTwqu/pmeWsClBRd/7HiWzN1g==}
+    peerDependencies:
+      chart.js: ^3.5.0
+      react: ^16.8.0 || ^17.0.0
+    dependencies:
+      chart.js: 3.7.0
+      react: 17.0.2
+    dev: false
+
   /react-dev-utils/11.0.4:
     resolution: {integrity: sha512-dx0LvIGHcOPtKbeiSUM4jqpBl3TcY7CDjZdfOIcKeznE7BWr9dg0iPG90G5yfVQ+p/rGNMXdbfStvzQZEVEi4A==}
     engines: {node: '>=10'}
@@ -10314,28 +10299,6 @@ packages:
 
   /react-is/17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
-    dev: false
-
-  /react-redux/7.2.6_react-dom@17.0.2+react@17.0.2:
-    resolution: {integrity: sha512-10RPdsz0UUrRL1NZE0ejTkucnclYSgXp5q+tB5SWx2qeG2ZJQJyymgAhwKy73yiL/13btfB6fPr+rgbMAaZIAQ==}
-    peerDependencies:
-      react: ^16.8.3 || ^17
-      react-dom: '*'
-      react-native: '*'
-    peerDependenciesMeta:
-      react-dom:
-        optional: true
-      react-native:
-        optional: true
-    dependencies:
-      '@babel/runtime': 7.16.3
-      '@types/react-redux': 7.1.20
-      hoist-non-react-statics: 3.3.2
-      loose-envify: 1.4.0
-      prop-types: 15.7.2
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
-      react-is: 17.0.2
     dev: false
 
   /react-refresh/0.8.3:
@@ -10453,6 +10416,18 @@ packages:
       - webpack-command
       - webpack-hot-middleware
       - webpack-plugin-serve
+    dev: false
+
+  /react-scroll/1.8.4_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-J9rFqmdzularCXJoK2vleHVg2//y9Fs6zh7K13x7Yz3Y1kHPfQ/TTq029L09q1Gr5/5JjFLBOB2Sa3yYIqyTyQ==}
+    peerDependencies:
+      react: ^15.5.4 || ^16.0.0 || ^17.0.0
+      react-dom: ^15.5.4 || ^16.0.0 || ^17.0.0
+    dependencies:
+      lodash.throttle: 4.1.1
+      prop-types: 15.7.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
     dev: false
 
   /react-table/7.7.0_react@17.0.2:

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Crypto from "../Components/Crypto";
 
 import { Table, TROW, THEAD } from "../Components/styledComp/table";
@@ -88,14 +89,19 @@ function Tracker() {
             </TROW>
 
             {coins.map((coins,key) => {
+              let coinid = coins.id;
               return (
+                <div  key={key}>
+                <Link to={`/${coinid}`} style={{textDecoration:"none"}}>
                 <Crypto
-                key={key}
+                 
                   img={coins.image}
                   symbol={coins.symbol}
                   name={coins.name}
                   cprice={coins.current_price}
                 />
+                </Link>
+                </div>
               );
             })}
           </Table>

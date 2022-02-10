@@ -6,12 +6,23 @@
   box-sizing: border-box;
 }
 
+/* Landing */
+
+.cta-btn{
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+  background-color: #ffffff;
+  color: #161b33;
+  font-family: "Poppins",sans-serif;
+  font-weight: 700;
+  margin: 20px 0;
+}
 
 footer{
   background-color: #161b33;
   text-align: center;
-  position: fixed;
-  width: 100vw;
+  
   bottom: 0;
   margin: 0;
 }
@@ -29,12 +40,16 @@ color: #ffffff;
   border-radius: 30px;
   padding: 20px;
   display: flex;
+  flex-wrap: wrap;
   align-items:center;
   margin: 10vh auto;
   width: fit-content;
+  
 }
 
-
+.graph{
+  margin: 0 clamp(5px,600px,5vw);
+}
 .img{
   flex: 1;
   background-color: #ffffff;
@@ -45,4 +60,78 @@ color: #ffffff;
 .right{
   flex: 2;
  margin: 0 20px;
+}
+
+/* Nav */
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin:5px 40px;
+}
+
+.main-nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  list-style-type: none;
+ 
+}
+.main-nav>li{
+  margin: 0 10px;
+  cursor: pointer;
+}
+.main-nav>li>a{
+  text-decoration: none;
+  color: white;
+}
+.login-btn{
+  border-radius: 8px;
+  padding: 10px;
+  border: none;
+  color: white;
+  background-color: #272a38;
+  font-family: "Poppins",sans-serif;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.login-btn:hover{
+  background-color: #ffffff;
+  color: #272a38;
+  transition: ease-in-out 400ms;
+}
+
+.login-btn>span{
+  margin:0 5px;
+}
+.auth{
+  width: fit-content;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .main-nav{
+    display: none;
+  }
+  
+}
+
+/* About us */
+.about-us{
+  padding: 5%;
+  text-align:justify;
+  margin:10px clamp(30px,400px,20vw);
+}
+.about-us>h1{
+text-align: center;
+}
+.about-us>p{
+  width: fit-content;
+
+}
+.about-us>*>a{
+  color: white;
 }
