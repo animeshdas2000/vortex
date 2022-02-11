@@ -138,3 +138,11 @@ text-align: center;
 .about-us>*>a{
   color: white;
 }
+.bitcoin-page{
+  margin: 0 0 150px 0;
+}
+
+.cta-btn>a{
+  text-decoration: none;
+  color: #161b33;
+}
