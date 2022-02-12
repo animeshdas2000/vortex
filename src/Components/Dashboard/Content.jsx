@@ -15,7 +15,7 @@ function Content() {
         {
           user?(<>
           
-          <button className="cta-btn"><Link to="/new/btc">Go to Dashboard</Link></button>
+          <button className="cta-btn"><Link to="/bitcoin">Go to Dashboard</Link></button>
           </>):(
             <button className="cta-btn" onClick={()=>{GoogleAuth()}}>Get Started</button>
           )
