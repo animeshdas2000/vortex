@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Crypto from "../Components/Crypto";
 
 import { Table, TROW, THEAD } from "../Components/styledComp/table";
@@ -82,19 +83,25 @@ function Tracker() {
 
           <Table>
             <TROW>
-              {THeadData.map((thd) => {
-                return <THEAD flex={thd.flex}>{thd.title}</THEAD>;
+              {THeadData.map((thd,key) => {
+                return <THEAD key={key} flex={thd.flex}>{thd.title}</THEAD>;
               })}
             </TROW>
 
-            {coins.map((coins) => {
+            {coins.map((coins,key) => {
+              let coinid = coins.id;
               return (
+                <div  key={key}>
+                <Link to={`/${coinid}`} style={{textDecoration:"none"}}>
                 <Crypto
+                 
                   img={coins.image}
                   symbol={coins.symbol}
                   name={coins.name}
                   cprice={coins.current_price}
                 />
+                </Link>
+                </div>
               );
             })}
           </Table>

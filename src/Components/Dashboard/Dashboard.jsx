@@ -1,6 +1,7 @@
 import React from "react";
 import Content from "./Content";
-import Sidebar from "./Sidebar";
+import About from "../About";
+// import Sidebar from "./Sidebar";
 
 // const DashBoardStyles = {
 //   display: "flex",
@@ -10,11 +11,12 @@ const Dashboard = () => {
   return (
     // <div style={DashBoardStyles}>
     <>
-      <aside>
+      {/* <aside>
         <Sidebar />
-      </aside>
+      </aside> */}
       <main>
         <Content />
+        <About/>
       </main>
     </>
   );
