@@ -1,49 +1,46 @@
-import React, { useEffect, useState,useContext } from "react";
+import React, { useEffect,useContext,useMemo } from "react";
 import { db } from "../config/firebase";
 import "chart.js/auto";
 import { Chart } from "react-chartjs-2";
-import { collection, query, getDocs } from "firebase/firestore";
+import { collection, query, getDocs, orderBy, limit } from "firebase/firestore";
 import {UserContext} from "../context/userContext"
 import unAuth from "../assets/401.png"
 
 
 
-function BitcoinPage() {
-  const [btcPrices, setbtcPrices] = useState([]);
-  const {user} = useContext(UserContext)
-  useEffect(() => {
-      async function fetchBitcoinPrice(){
-        const q = query(collection(db, "bitcoin-prices"));
+function BitcoinPage() {  
 
-        const querySnapshot = await getDocs(q);
-        querySnapshot.forEach((doc) => {
-          var data = doc.data();
-          setbtcPrices((arr) => [...arr, data]);
-        });
-     
-      }
-      fetchBitcoinPrice();
-   }, []);
-
+  const x =useMemo(()=>[],[]);
+  const y= useMemo(()=>[],[]);
+  let currPrice = 43720;
   const formatDate = (res) => {
     let time = new Date(res).toLocaleTimeString([]);
     return time;
   };
-  let x = [];
-  let y = [];
+  const {user} = useContext(UserContext)
+  useEffect(() => {
+      async function fetchBitcoinPrice(){
+        const q = query(collection(db, "bitcoin-prices"),orderBy("time","desc"),limit(100));
 
-  btcPrices.forEach((i) => x.push(i.price));
-
-  btcPrices.forEach((i) => {
-    y.push(formatDate(i.time));
-  });
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+          let data = doc.data();
+          y.push(data.price);
+          x.push(formatDate(data.time));
+        })
+       
+      }
+      fetchBitcoinPrice();
+   }, [x,y]);
+   
+  
 
   const data = {
-    labels: y,
+    labels: x,
     datasets: [
       {
         label: "Price of Bitcoin",
-        data: x,
+        data: y,
         fill: true,
         backgroundColor: ["#272a38"],
         borderColor: ["#ffffff"],
@@ -52,11 +49,12 @@ function BitcoinPage() {
       },
     ],
   };
+
   return (
     <>
       {!user?(
           <>
-                        <div style={{textAlign:"center"}}>
+          <div style={{textAlign:"center"}}>
           <h1>Please Login</h1>
           <img src={unAuth}  width="40%" alt="" />
           
@@ -75,7 +73,7 @@ function BitcoinPage() {
         </div>
         <div className="right">
           <h1>Bitcoin (BTC)</h1>
-          <h5>USD value: ${x.findLast((item) => true)} </h5>
+          <h5>USD value: $ {currPrice}</h5>
         </div>
       </div>
       <div className="graph">
