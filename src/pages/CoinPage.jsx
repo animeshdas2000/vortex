@@ -2,12 +2,12 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Graph from "../Components/Graph";
 import { cryptoAPI } from "../services/axios";
-import {UserContext} from "../context/userContext"
-import unAuth from "../assets/401.png"
+import { UserContext } from "../context/userContext";
+import unAuth from "../assets/401.png";
 function CoinPage() {
   let params = useParams();
   const id = params.symbl;
-  const {user} = useContext(UserContext)
+  const { user } = useContext(UserContext);
   // const [coinImg,setCoinImg] = useState("")
   // const [coinPrice,setCoinPrice] = useState([])
   const [coin, setCoin] = useState({
@@ -17,7 +17,6 @@ function CoinPage() {
     coinPrice: "",
     mktCap: "",
   });
- 
 
   useEffect(() => {
     //   async function getCoin(){
@@ -44,17 +43,16 @@ function CoinPage() {
       })
       .catch((err) => console.log(err));
   }, [id]);
-  
-    return (
-      <>
-      {!user?(
-        <div style={{textAlign:"center"}}>
+
+  return (
+    <>
+      {!user ? (
+        <div style={{ textAlign: "center" }}>
           <h1>Please Login</h1>
-          <img src={unAuth}  width="40%" alt="" />
-          
+          <img src={unAuth} width="40%" alt="" />
         </div>
-      ):(<div>
-        
+      ) : (
+        <div>
           <div className="card">
             <div className="img">
               <img src={coin.coinImg.large} width="70%" alt="" />
@@ -66,16 +64,13 @@ function CoinPage() {
               <h5>USD value: ${coin.coinPrice} </h5>
               <h5>Mkt. Cap: ${coin.mktCap} </h5>
             </div>
-        
           </div>
           {/* <code>*If the graph is not visible reload the page</code> */}
-          <Graph id={id} name={coin.name}/>
-      </div>
+          <Graph id={id} name={coin.name} />
+        </div>
       )}
-        
-      </>
-    );
-  
+    </>
+  );
 }
 
 export default CoinPage;
